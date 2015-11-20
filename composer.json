@@ -1,0 +1,53 @@
+{
+  "name": "felixarntz/widgets-definitely",
+  "description": "This framework plugin makes adding widgets with automated sections and fields to WordPress very simple, yet flexible.",
+  "version": "0.5.0",
+  "license": "GPL-3.0",
+  "type": "wordpress-plugin",
+  "keywords": [
+    "wordpress",
+    "plugin",
+    "definitely",
+    "framework",
+    "library",
+    "developer",
+    "admin",
+    "backend",
+    "structured data",
+    "ui",
+    "api",
+    "cms",
+    "widgets",
+    "sections",
+    "fields"
+  ],
+  "homepage": "https://wordpress.org/plugins/widgets-definitely/",
+  "authors": [
+    {
+      "name": "Felix Arntz",
+      "email": "felix-arntz@leaves-and-love.net",
+      "homepage": "http://leaves-and-love.net",
+      "role": "Developer"
+    }
+  ],
+  "support": {
+    "email": "felix-arntz@leaves-and-love.net",
+    "issues": "https://github.com/felixarntz/widgets-definitely/issues"
+  },
+  "config": {
+    "preferred-install": "dist"
+  },
+  "autoload": {
+    "psr-4": {
+      "WPOD\\": "inc/WPOD/"
+    },
+    "files": [
+      "inc/functions.php"
+    ]
+  },
+  "require": {
+    "composer/installers": "~1.0",
+    "felixarntz/wpdlib": "0.5.2",
+    "felixarntz/leavesandlove-wp-plugin-util": "1.6.4"
+  }
+}
