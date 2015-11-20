@@ -2,7 +2,7 @@
 [![Latest Stable Version](https://poser.pugx.org/felixarntz/widgets-definitely/version)](https://packagist.org/packages/felixarntz/widgets-definitely)
 [![License](https://poser.pugx.org/felixarntz/widgets-definitely/license)](https://packagist.org/packages/felixarntz/widgets-definitely)
 
-Options Definitely
+Widgets Definitely
 ==================
 
 This framework plugin makes adding widgets with automated sections and fields to WordPress very simple, yet flexible. It all works using a single action and an array.
