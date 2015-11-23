@@ -1,5 +1,10 @@
 languages:
    PHP: true
+engines:
+  phpmd:
+    enabled: false
+  phpcodesniffer:
+    enabled: false
 exclude_paths:
 - "vendor/*"
 - "assets/vendor/*"
