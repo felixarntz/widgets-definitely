@@ -63,6 +63,10 @@ if ( ! class_exists( 'WPWD\App' ) ) {
 
 			add_filter( 'wpwd_widget_validated', array( $this, 'widget_validated' ), 10, 2 );
 			add_filter( 'wpwd_section_validated', array( $this, 'section_validated' ), 10, 2 );
+
+			add_filter( 'plugin_action_links_' . plugin_basename( self::get_info( 'main_file' ) ), array( $this, 'add_action_link' ) );
+			add_action( 'admin_notices', array( $this, 'display_admin_notice' ) );
+			add_action( 'wp_ajax_wpwd_dismiss_notice', array( $this, 'ajax_dismiss_notice' ) );
 		}
 
 		/**
@@ -185,6 +189,91 @@ if ( ! class_exists( 'WPWD\App' ) ) {
 		}
 
 		/**
+		 * This filter adds a link to the framework guide to the plugins table.
+		 *
+		 * @internal
+		 * @since 0.5.0
+		 * @param array $links the original links
+		 * @return array the modified links
+		 */
+		public function add_action_link( $links = array() ) {
+			$custom_links = array(
+				'<a href="' . 'https://github.com/felixarntz/widgets-definitely/wiki' . '" target="_blank">' . __( 'Guide', 'widgets-definitely' ) . '</a>',
+			);
+
+			return array_merge( $custom_links, $links );
+		}
+
+		/**
+		 * This function displays and admin notice that the framework is active.
+		 *
+		 * The notice will only be shown if the corresponding option is set.
+		 * Once the notice is hidden, it will not show again until the plugin is deactivated and then activated again.
+		 *
+		 * @internal
+		 * @since 0.5.0
+		 */
+		public function display_admin_notice() {
+			$setting = get_option( 'widgets_definitely_notice' );
+			if ( ! $setting ) {
+				return;
+			}
+
+			if ( ! current_user_can( 'manage_options' ) ) {
+				return;
+			}
+
+			?>
+			<script type="text/javascript">
+				jQuery( document ).ready( function( $ ) {
+					$( document ).on( 'click', '#widgets-definitely-notice .notice-dismiss', function( e ) {
+						$.ajax( '<?php echo admin_url( "admin-ajax.php" ); ?>', {
+							data: {
+								action: 'wpwd_dismiss_notice'
+							},
+							dataType: 'json',
+							method: 'POST'
+						});
+					});
+				});
+			</script>
+
+			</script>
+			<div id="widgets-definitely-notice" class="notice updated is-dismissible hide-if-no-js">
+				<p>
+					<?php if ( 'activated' === $setting ) : ?>
+						<?php printf( __( 'You have just activated %s.', 'widgets-definitely' ), '<strong>' . self::get_info( 'name' ) . '</strong>' ); ?>
+					<?php else : ?>
+						<?php printf( __( 'You are running the plugin %s on your site.', 'widgets-definitely' ), '<strong>' . self::get_info( 'name' ) . '</strong>' ); ?>
+					<?php endif; ?>
+					<?php _e( 'This plugin is a framework that developers can leverage to quickly add extended widgets with sections and fields.', 'widgets-definitely' ); ?>
+				</p>
+				<p>
+					<?php printf( __( 'For a guide on how to use the framework please read the <a href="%s" target="_blank">Wiki</a>.', 'widgets-definitely' ), 'https://github.com/felixarntz/widgets-definitely/wiki' ); ?>
+				</p>
+			</div>
+			<?php
+
+			if ( 'activated' === $setting ) {
+				update_option( 'widgets_definitely_notice', 'active' );
+			}
+		}
+
+		/**
+		 * This function is an AJAX function that is run when the plugin's admin notice is dismissed.
+		 *
+		 * The function ensures that the notice is dismissed permanently.
+		 *
+		 * @internal
+		 * @since 0.5.0
+		 */
+		public function ajax_dismiss_notice() {
+			delete_option( 'widgets_definitely_notice' );
+
+			wp_send_json_success();
+		}
+
+		/**
 		 * Adds widgets and their subcomponents.
 		 *
 		 * @internal
@@ -236,6 +325,18 @@ if ( ! class_exists( 'WPWD\App' ) ) {
 					self::doing_it_wrong( __METHOD__, $field->get_error_message(), '0.5.0' );
 				}
 			}
+		}
+
+		/**
+		 * Activation function.
+		 *
+		 * This function is run automatically when the plugin is activated.
+		 *
+		 * @internal
+		 * @since 0.5.0
+		 */
+		public static function activate() {
+			add_option( 'widgets_definitely_notice', 'activated' );
 		}
 	}
 }
