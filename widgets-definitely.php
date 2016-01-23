@@ -1,9 +1,9 @@
 <?php
 /*
-Plugin Name: Options Definitely
+Plugin Name: Widgets Definitely
 Plugin URI: https://wordpress.org/plugins/widgets-definitely/
 Description: This framework plugin makes adding options screens with sections and fields to WordPress very simple, yet flexible.
-Version: 0.5.1
+Version: 0.5.0
 Author: Felix Arntz
 Author URI: http://leaves-and-love.net
 License: GNU General Public License v3
