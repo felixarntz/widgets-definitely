@@ -9,7 +9,6 @@ Author URI: http://leaves-and-love.net
 License: GNU General Public License v3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: widgets-definitely
-Domain Path: /languages/
 Tags: wordpress, plugin, definitely, framework, library, developer, admin, backend, structured data, ui, api, cms, options, settings, settings screen, tabs, sections, metaboxes, fields, help tabs
 */
 /**
@@ -39,13 +38,14 @@ if ( ! class_exists( 'WPWD\App' ) ) {
 }
 
 LaL_WP_Plugin_Loader::load_plugin( array(
-	'slug'				=> 'widgets-definitely',
-	'name'				=> 'Widgets Definitely',
-	'version'			=> '0.5.0',
-	'main_file'			=> __FILE__,
-	'namespace'			=> 'WPWD',
-	'textdomain'		=> 'widgets-definitely',
+	'slug'					=> 'widgets-definitely',
+	'name'					=> 'Widgets Definitely',
+	'version'				=> '0.5.0',
+	'main_file'				=> __FILE__,
+	'namespace'				=> 'WPWD',
+	'textdomain'			=> 'widgets-definitely',
+	'use_language_packs'	=> true,
 ), array(
-	'phpversion'		=> '5.3.0',
-	'wpversion'			=> '4.0',
+	'phpversion'			=> '5.3.0',
+	'wpversion'				=> '4.0',
 ) );
