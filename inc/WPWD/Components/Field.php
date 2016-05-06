@@ -1,7 +1,7 @@
 <?php
 /**
  * @package WPWD
- * @version 0.5.1
+ * @version 0.5.0
  * @author Felix Arntz <felix-arntz@leaves-and-love.net>
  */
 

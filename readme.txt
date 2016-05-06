@@ -1,7 +1,7 @@
 === Widgets Definitely ===
 
 Plugin Name:       Widgets Definitely
-Plugin URI:        https://wordpress.org/plugins/widgets-definitely/
+Plugin URI:        https://github.com/felixarntz/widgets-definitely
 Author URI:        http://leaves-and-love.net
 Author:            Felix Arntz
 Donate link:       http://leaves-and-love.net/wordpress-plugins/

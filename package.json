@@ -24,7 +24,7 @@
     "email": "felix-arntz@leaves-and-love.net",
     "url": "http://leaves-and-love.net"
   },
-  "homepage": "https://wordpress.org/plugins/widgets-definitely/",
+  "homepage": "https://github.com/felixarntz/widgets-definitely",
   "repository": {
     "type": "git",
     "url": "git://github.com/felixarntz/widgets-definitely.git"

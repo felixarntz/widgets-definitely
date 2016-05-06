@@ -1,19 +1,19 @@
 <?php
 /*
 Plugin Name: Widgets Definitely
-Plugin URI: https://wordpress.org/plugins/widgets-definitely/
-Description: This framework plugin makes adding options screens with sections and fields to WordPress very simple, yet flexible.
+Plugin URI: https://github.com/felixarntz/widgets-definitely
+Description: This framework plugin makes adding widgets with automated sections and fields to WordPress very simple, yet flexible.
 Version: 0.5.0
 Author: Felix Arntz
 Author URI: http://leaves-and-love.net
 License: GNU General Public License v3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: widgets-definitely
-Tags: wordpress, plugin, definitely, framework, library, developer, admin, backend, structured data, ui, api, cms, options, settings, settings screen, tabs, sections, metaboxes, fields, help tabs
+Tags: wordpress, plugin, definitely, framework, library, developer, admin, backend, structured data, ui, api, cms, widgets, sections, fields
 */
 /**
  * @package WPWD
- * @version 0.5.1
+ * @version 0.5.0
  * @author Felix Arntz <felix-arntz@leaves-and-love.net>
  */
 
