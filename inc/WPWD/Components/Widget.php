@@ -1,8 +1,11 @@
 <?php
 /**
+ * WPWD\Components\Widget class
+ *
  * @package WPWD
- * @version 0.5.0
+ * @subpackage Components
  * @author Felix Arntz <felix-arntz@leaves-and-love.net>
+ * @since 0.5.0
  */
 
 namespace WPWD\Components;

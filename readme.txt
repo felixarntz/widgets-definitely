@@ -2,17 +2,16 @@
 
 Plugin Name:       Widgets Definitely
 Plugin URI:        https://github.com/felixarntz/widgets-definitely
-Author URI:        http://leaves-and-love.net
 Author:            Felix Arntz
-Donate link:       http://leaves-and-love.net/wordpress-plugins/
+Author URI:        https://leaves-and-love.net
 Contributors:      flixos90
-Requires at least: 4.0 
-Tested up to:      4.4.2
+Requires at least: 4.0
+Tested up to:      4.5.2
 Stable tag:        0.5.0
 Version:           0.5.0
-License:           GPL v3
+License:           GNU General Public License v3
 License URI:       http://www.gnu.org/licenses/gpl-3.0.html
-Tags:              wordpress, plugin, definitely, framework, library, developer, admin, backend, structured data, ui, api, cms, widgets, sections, fields
+Tags:              definitely, framework, admin, widgets, sections, fields
 
 This framework plugin makes adding widgets with automated sections and fields to WordPress very simple, yet flexible.
 
